@@ -3,10 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moja Pierwsza Strona</title>
+    <meta name="description" content="Presale tokena - Kup tokeny przed oficjalnym uruchomieniem">
+    <title>Presale Tokena</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7fc;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+        section {
+            padding: 40px 20px;
+            text-align: center;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .cta-btn {
+            background-color: #ff7f50;
+            padding: 10px 20px;
+            font-size: 18px;
+            color: white;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .cta-btn:hover {
+            background-color: #ff5733;
+        }
+        .card {
+            display: inline-block;
+            width: 30%;
+            margin: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .card img {
+            width: 100%;
+            border-radius: 5px;
+        }
+        .info {
+            margin-top: 10px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .form-input {
+            padding: 10px;
+            margin: 10px 0;
+            width: 80%;
+            max-width: 400px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .form-button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        .form-button:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
-    <h1>Witaj na mojej stronie!</h1>
-    <p>To jest moja pierwsza strona internetowa hostowana na GitHubie.</p>
+
+<header>
+    <h1>Presale Tokena</h1>
+    <p>Dołącz do naszej presale i zdobądź tokeny przed oficjalnym uruchomieniem!</p>
+</header>
+
+<section>
+    <h2>O tokenie</h2>
+    <p>Nasza tokena oferuje niesamowite możliwości inwestycyjne i dostęp do ekskluzywnych usług w naszym ekosystemie. Zainwestuj już teraz, aby zapewnić sobie udział w przyszłym rozwoju projektu!</p>
+    <a href="#form" class="cta-btn">Dołącz do presale</a>
+</section>
+
+<section>
+    <h2>Korzyści</h2>
+    <div class="card">
+        <img src="https://via.placeholder.com/300" alt="Korzyść 1">
+        <h3>Wysokie zyski</h3>
+        <p class="info">Zainwestuj wcześnie i otrzymaj tokeny po niższej cenie. Potencjał dużych zysków!</p>
+    </div>
+    <div class="card">
+        <img src="https://via.placeholder.com/300" alt="Korzyść 2">
+        <h3>Bezpieczeństwo</h3>
+        <p class="info">Nasze tokeny są zabezpieczone nowoczesnymi technologiami blockchain, gwarantującymi bezpieczeństwo Twojej inwestycji.</p>
+    </div>
+    <div class="card">
+        <img src="https://via.placeholder.com/300" alt="Korzyść 3">
+        <h3>Exclusywny dostęp</h3>
+        <p class="info">Uzyskaj dostęp do ekskluzywnych funkcji, wydarzeń i usług w naszym ekosystemie.</p>
+    </div>
+</section>
+
+<section id="form">
+    <h2>Zarejestruj się na presale</h2>
+    <form>
+        <input type="text" class="form-input" placeholder="Imię i nazwisko" required>
+        <input type="email" class="form-input" placeholder="Adres e-mail" required>
+        <input type="number" class="form-input" placeholder="Kwota inwestycji (w USD)" required>
+        <button type="submit" class="form-button">Zarejestruj się</button>
+    </form>
+</section>
+
+<footer>
+    <p>&copy; 2024 Presale Tokena. Wszystkie prawa zastrzeżone.</p>
+    <p><a href="mailto:kontakt@tokenpresale.com" style="color: #fff;">Kontakt</a> | <a href="#" style="color: #fff;">Polityka Prywatności</a></p>
+</footer>
+
 </body>
 </html>
