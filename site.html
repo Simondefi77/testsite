@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presale Token</title>
+    <script src="https://cdn.jsdelivr.net/npm/ethers@5.0.0-beta.137/dist/ethers.umd.min.js"></script>
+</head>
+<body>
+    <h1>Token Presale</h1>
+    <button onclick="connectWallet()">Połącz portfel</button>
+    <p>Cena tokena: <span id="tokenPrice"></span> ETH</p>
+    <button onclick="buyTokens()">Kup tokeny</button>
+
+    <script>
+        async function connectWallet() {
+            if (window.ethereum) {
+                try {
+                    await ethereum.request({ method: 'eth_requestAccounts' });
+                    const provider = new ethers.providers.Web3Provider(window.ethereum);
+                    const signer = provider.getSigner();
+                    const address = await signer.getAddress();
+                    console.log('Połączono portfel:', address);
+                } catch (err) {
+                    console.log('Błąd podczas łączenia portfela:', err);
+                }
+            } else {
+                alert('Zainstaluj MetaMask!');
+            }
+        }
+
+        async function buyTokens() {
+            const provider = new ethers.providers.Web3Provider(window.ethereum);
+            const signer = provider.getSigner();
+            const contractAddress = 'ADRES_KONTRAKTU'; // Adres Twojego kontraktu
+            const abi = [
+                "function buyTokens() public payable"
+            ];
+            const contract = new ethers.Contract(contractAddress, abi, signer);
+            
+            const tx = await contract.buyTokens({ value: ethers.utils.parseEther('1') }); // Zakup za 1 ETH
+            console.log('Transakcja:', tx);
+        }
+
+        async function getTokenPrice() {
+            const provider = new ethers.providers.Web3Provider(window.ethereum);
+            const contract = new ethers.Contract('ADRES_KONTRAKTU', ['function price() public view returns (uint256)'], provider);
+            const price = await contract.price(); // Pobierz cenę tokena
+            document.getElementById('tokenPrice').innerText = ethers.utils.formatEther(price);
+        }
+
+        window.onload = getTokenPrice;
